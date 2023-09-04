@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar class="top-toolbar">
+    <ion-title class="title">
+      PHARMACY COUNCIL OF INDIA
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="container">
+    <div class="logo-container">
+      <ion-img src="assets/PCI_Logo.jpeg" alt="Logo"></ion-img>
+    </div>
+    <div class="form-container">
+      <div class="intro">
+        Welcome to the Inspection Portal
+      </div>
+      <ion-form [formGroup]="loginForm" class="login-form">
+        <ion-item class="input-container">
+          <ion-label position="stacked">Username</ion-label>
+          <ion-input formControlName="userName" type="email" required></ion-input>
+        </ion-item>
+        <ion-item class="input-container">
+          <ion-label position="stacked">Password</ion-label>
+          <ion-input formControlName="password" type="{{ showPassword ? 'text' : 'password' }}" required></ion-input>
+          <ion-icon name="{{ showPassword ? 'eye-off' : 'eye' }}" color="dark" class="password-toggle" (click)="togglePasswordVisibility()"></ion-icon>
+        </ion-item>
+        <ion-button type="submit" (click)="onSubmit()" expand="full" class="login-button">{{ btnLogin }}</ion-button>
+      </ion-form>
+    </div>
+  </div>
+</ion-content>

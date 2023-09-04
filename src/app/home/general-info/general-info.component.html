@@ -1,0 +1,61 @@
+<div class="layout-main-section mb-4" *ngIf="loaded">
+  <div id="editorjs" class="desk-page page-main-content">
+    <div class="labels-container">
+      <label class="label"><ion-icon name='school' class='large-icon'></ion-icon>INSTITUTE:</label>
+    </div>
+    <div class="value-container">
+      <label class="value">{{ clgData.institution_name }} </label>
+    </div>
+    <br>
+    <div class="labels-container">
+      <ion-icon name='business' class='large-icon'></ion-icon>
+      <label class="label">INSTITUTE TYPE:</label>
+    </div>
+    <div class="value-container">
+      <label class="value">{{ clgData.status_of_course_conducting_body }} </label>
+    </div>
+    <br />
+    <div class="labels-container">
+      <ion-icon name='location' class='large-icon'></ion-icon>
+      <label class="label">ADDRESS:</label>
+    </div>
+    <div class="value-container">
+      <label class="value"> GET from api </label>
+    </div>
+    <br />
+    <div class="labels-container">
+      <ion-icon name='location' class='large-icon'></ion-icon>
+      <ion-label class="label">STATE:</ion-label>
+    </div>
+    <div class="value-container">
+      <ion-label class="value">{{ clgData.state_name }}</ion-label>
+    </div>
+    <br />
+    <div class="labels-container">
+      <ion-icon name='code-working' class='large-icon'></ion-icon>
+      <ion-label class="label">PCI CODE:</ion-label>
+    </div>
+    <div class="value-container">
+      <ion-label class="value">{{ clgData.naming_series }}</ion-label>
+    </div>
+    <br />
+    <div class="labels-container">
+      <ion-icon name='add-circle' class='large-icon'></ion-icon>
+      <label class="label">APPLY FOR:</label>
+    </div>
+    <div class="value-container">
+      <div *ngIf="clgData.new_courses">
+        <span style="font-weight: 600">New Course -</span> <br />
+        <label class="value">{{ clgData.new_courses }} </label>
+      </div>
+      <div *ngIf="clgData.raise_in_admission">
+        <span style="font-weight: 600">Raise in Admission</span> <br />
+        <ion-label class="value">{{ clgData.raise_in_admission }} </ion-label>
+      </div>
+      <div *ngIf="clgData.existing_courses">
+        <span style="font-weight: 600">Extension of Course</span> <br />
+        <label class="value">{{ clgData.existing_courses }} </label>
+      </div>
+    </div>
+  </div>
+</div>
